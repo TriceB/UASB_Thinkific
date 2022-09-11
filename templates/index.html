@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body{
+            font-family: 'Tenali Ramakrishna', sans-serif;
+            background-color:black;
+            color:#FFA900;
+            font-size: 1.3em;
+        }
+        #transactionInformation{
+            /* float:left; */
+            width: 40%;
+            /* margin-left:20%; */
+        }
+        /* #transactionInformation{
+                padding-left:10%;
+        } */
+        h1{
+        font-family: 'Oswald', sans-serif;
+        color: #FFA900;
+        }
+        #submitButton{
+            background-color: #FFA900;
+            font-weight: 500;
+            color:black;
+            font-size:1.5em;
+            font-family: 'Oswald', sans-serif;
+            border-radius: 8px;
+        }
+
+        .text-input{
+            /* width: 300px;
+            height:100px; */
+            border-radius: 8px;
+            /* line-height: 5px; */
+        }
+
+        /* .text-input::placeholder {
+            overflow: visible;
+            text-align: left;
+            padding-top: 50px;
+            align-content: center;
+        } */
+
+
+    </style>
+</head>
+<body>
+    {% block content %}
+    {% autoescape false %}
+<div class="container"></div>
+{% if no_message_error %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{ no_message_error }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endif %}
+
+<form action="" method="POST">
+
+    <center>
+        <h1>
+            Test Message Board
+        </h1>
+
+    <div id="messageInformation">
+
+
+
+    <!--student Name-->
+
+    <label>Please Enter your Name:</label><br/>
+    <input name="studentName" type="text" placeholder="UA student" value="{{ student_name }}" class="text-input" /><br/>
+<br/>
+    <!--student message -->
+
+    <label>Please enter your message to show love to a fellow Tribe member:</label><br/>
+    <!-- <input name="studentMessage" type="input" placeholder="Keep up the progress #unlock!" value="{{ student_message }}" class="text-input" /><br/> -->
+    <textarea name="studentMessage" rows="3" cols="30" value="{{ student_message }}" class="text-input">test</textarea>
+
+<br/>
+    </div>
+<div id="messageInformation">
+
+
+<br/>
+
+<p><button type="submit" name="action" value="Add A Message" id="submitButton">Add A Message</button></p>
+
+
+
+</div>
+</center>
+
+</form>
+
+<div class="payer-balance-info">
+<center>
+
+
+{% endautoescape %}
+{% endblock %}
+</center>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
