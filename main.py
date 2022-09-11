@@ -60,8 +60,8 @@ def get_affiliate_members(page_num=1):
     # page_num = 1
     params = (
         ('page', page_num),  # page_num
-        # as of 9/21 there are a total of 17962 users
-        # as of 11/7 there are a total of 18261 users
+        # as of 9/21/21 there are a total of 17962 users
+        # as of 11/7/21 there are a total of 18261 users
         ('limit', '1000')
         # ('limit', '100')
     )
